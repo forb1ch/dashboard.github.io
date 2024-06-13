@@ -1,0 +1,122 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Dashboard
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+body.dashboard__page
+header
+  svg.menu-button__svg
+    line.top(x1='0' y1='50%' x2='100%' y2='50%' shape-rendering='crispEdges')
+    line.middle(x1='0' y1='50%' x2='100%' y2='50%' shape-rendering='crispEdges')
+    line.bottom(x1='0' y1='50%' x2='100%' y2='50%' shape-rendering='crispEdges')
+aside.dashboard__aside
+  .sidebar__header
+    img(src="../src/img/logo.svg" alt="logo")
+  nav.sidebar__menu
+    ul.sidebar__menu_list
+      li.sidebar__menu_item
+        a.dashboard(href='') Dashboard
+      li.sidebar__menu_item
+        a.product(href='') Product
+      li.sidebar__menu_item.sidebar__menu_item--active
+        a.customers(href='') Customers
+      li.sidebar__menu_item
+        a.wallet(href='') Income
+      li.sidebar__menu_item
+        a.discount(href='') Promote
+      li.sidebar__menu_item
+        a.help(href='') Help
+  .siderbar__footer
+    .user__profile
+      .user__image
+        img(src='../src/img/user.png' alt='user')
+      .user__info
+        .user__name
+          | Evano
+        .user__position
+          | Project Manager
+main.dashboard__main
+  .dashboard__greeting
+    h2.dashboard__greeting_title Hello Evano
+    img.dashboard__greeting_icon(src='img/hello.png' alt='greeting-icon')
+    p ,
+  .dashboard
+    .dashboard__header
+      .dashboard__left_side
+        h2.dashboard__header_title
+          | All customers
+        p.dashboard__header_subtitle Active Members
+      .dashboard__right_side
+        .dashboard__search
+          input.dashboard__search_input(type='search' placeholder='Search')
+    .dashboard__grid
+      .dashboard__grid_header
+        .dashboard__grid_row
+          span.dashboard__grid_item.dashboard__grid_item--customer
+            p Customer Name
+          span.dashboard__grid_item.dashboard__grid_item--company
+            p Company
+          span.dashboard__grid_item.dashboard__grid_item--phone
+            p Phone Number
+          span.dashboard__grid_item.dashboard__grid_item--email
+            p Email
+          span.dashboard__grid_item.dashboard__grid_item--country
+            p Country
+          span.dashboard__grid_item.dashboard__grid_item--status
+            p Status
+      .dashboard__grid_content
+        .dashboard__grid_row
+          span.dashboard__grid_item.dashboard__grid_item--customer
+            span.dashboard__grid_item_label Customer Name
+            p Jane Cooper
+          span.dashboard__grid_item.dashboard__grid_item--company
+            span.dashboard__grid_item_label Company
+            p Microsoft
+          span.dashboard__grid_item.dashboard__grid_item--phone
+            span.dashboard__grid_item_label Phone Number
+            p (225) 555-0118
+          span.dashboard__grid_item.dashboard__grid_item--email
+            span.dashboard__grid_item_label Email
+            p jane@microsoft.com
+          span.dashboard__grid_item.dashboard__grid_item--country
+            span.dashboard__grid_item_label Counry
+            p United States
+          span.dashboard__grid_item.dashboard__grid_item--status
+            span.dashboard__grid_item_label Status
+            button.dashboard__button.dashboard__button--active Active
+        .dashboard__grid_row
+          span.dashboard__grid_item.dashboard__grid_item--customer
+            span.dashboard__grid_item_label Customer Name
+            p Floyd Miles
+          span.dashboard__grid_item.dashboard__grid_item--company
+            span.dashboard__grid_item_label Company
+            p Yahoo
+          span.dashboard__grid_item.dashboard__grid_item--phone
+            span.dashboard__grid_item_label Phone Number
+            p (205) 555-0100
+          span.dashboard__grid_item.dashboard__grid_item--email
+            span.dashboard__grid_item_label Email
+            p floyd@yahoo.com
+          span.dashboard__grid_item.dashboard__grid_item--country
+            span.dashboard__grid_item_label Counry
+            p Kiribati
+          span.dashboard__grid_item.dashboard__grid_item--status
+            span.dashboard__grid_item_label Status
+            button.dashboard__button.dashboard__button--inactive Inactive
+      .dashboard__grid_footer
+        .dashboard__left_side
+          p.dashboard__pager_info
+            | Showing data 1 to 8 of 
+            span 256k
+            |  entries
+        .dashboard__right_side
+          ul.dashboard__pager
+            li.dashboard__pager_item.dashboard__pager_item--prev &lt;
+            li.dashboard__pager_item.dashboard__pager_item--active 1
+            li.dashboard__pager_item 2
+            li.dashboard__pager_item 3
+            li.dashboard__pager_item 4
+            li.dashboard__pager_item.dashboard__pager_item--dots ...
+            li.dashboard__pager_item 40
+            li.dashboard__pager_item.dashboard__pager_item--next &gt;
+script(src='./index.js')

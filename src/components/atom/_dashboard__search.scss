@@ -1,0 +1,48 @@
+.dashboard__search {
+    width: 216px;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: url('./img/search.svg');
+        background-size: contain;
+        height: 24px;
+        width: 24px;
+        top: 6px;
+        left: 8px;
+    }
+
+    &_input {
+        background-color: $light_grey30;
+        border: 0;
+        border-radius: 10px;
+        width: 100%;
+        padding-left: 40px;
+        padding: 7px 8px 7px 40px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            font-size: 12px;
+            line-height: 18px;
+            color: $lighter_grey;
+        }
+    }
+}
+
+
+@mixin for-desktop-up {
+    .dashboard__header {
+        &_title {
+            @include flexy-font(22px);
+        }
+    
+        &_subtitle { 
+            @include flexy-font(14px);
+        }
+    }
+}

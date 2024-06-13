@@ -1,0 +1,26 @@
+.dashboard__button {
+    min-width: 80px;
+    font-weight: 500;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 19px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dashboard__button--active {
+    border-color: $dark_green;
+    background-color: $green_light;
+    color: $darker_green;
+}
+
+
+.dashboard__button--inactive {
+    border-color: $red;
+    background-color: $light_red;
+    color: $red;
+}

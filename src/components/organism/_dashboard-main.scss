@@ -1,0 +1,11 @@
+.dashboard__main {
+    background-color: $light_grey10;
+    flex: 1;
+    padding: 41px 95px 41px 71px;
+}
+
+@include for-phone-tablet {
+    .dashboard__main {
+        padding: 30px 20px;
+    }
+}

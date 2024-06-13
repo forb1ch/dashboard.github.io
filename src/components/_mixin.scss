@@ -1,0 +1,58 @@
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+@mixin flexy-font($fontsize){
+    $base: 1440px;
+    @media (min-width: $base){
+      font-size: $fontsize;
+    }
+  
+    @each $factor in 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1 {
+      @media (max-width: $base * $factor){
+        font-size: $fontsize * $factor;
+      }
+    }
+  }
+
+  @mixin for-phone-only {
+	@media (max-width: 599px) { @content; }
+  }
+  @mixin for-phone-tablet-max {
+	@media (max-width: 1023px) { @content; }
+  }
+  @mixin for-phone-tablet {
+	@media (max-width: 1199px) { @content; }
+  }
+  @mixin for-tablet {
+	@media (min-width: 600px) and (max-width: 1024px) { @content; }
+  }
+  @mixin for-tablet-landscape {
+	@media (min-width: 600px) and (max-width: 1199px) { @content; }
+  }
+  @mixin for-desktop-up {
+	@media (min-width: 1200px) { @content; }
+  }

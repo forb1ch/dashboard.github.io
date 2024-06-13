@@ -1,0 +1,35 @@
+
+.dashboard__aside {
+    min-width: 306px;
+    padding: 36px 28px 76px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    background-color: $white;
+}
+
+.siderbar__footer {
+    margin-top: auto;
+}
+
+.menu-open .dashboard__aside {
+    height: calc(100vh - 65px);
+    transform: translateX(0);
+    width: 100%;
+    transition: all .4s ease-in-out;
+}
+
+@include for-phone-tablet {
+    .dashboard__aside {
+        padding: 30px 20px;
+        height: 0;
+        transform: translateX(-100%);
+        transition: all .4s ease-in-out;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        min-width: 300px;
+        z-index: 1;
+    }  
+}

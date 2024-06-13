@@ -1,0 +1,85 @@
+.dashboard__pager {
+    display: flex;
+    align-items: center;
+
+    &_info span,
+    &_info {
+        font-size: 14px;
+        line-height: 1.5;
+        color: $lighter_grey;
+        margin: 0;
+    }
+
+    &_item {
+        font-size: 14px;
+        line-height: 1.5;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $light_grey50;
+        color: $text;
+        border-radius: 4px;
+        margin: 0 6px;
+        cursor: pointer;
+
+        &:hover,
+        &--active {
+            background-color: $blue;
+            color: $white;
+            transition: all .3s ease-in-out;
+        }
+
+        &--prev:hover {
+            background: $blue no-repeat url('./img/chevron-left-white.svg');
+            background-position: center;
+        }
+
+        &--next:hover {
+            background: $blue no-repeat url('./img/chevron-right-white.svg');
+            background-position: center;
+        }
+
+        &--prev,
+        &--next {
+            width: 26px;
+            font-size: 0;
+        }
+
+        &--prev {
+            background: $light_grey50 no-repeat url('./img/chevron-left-black.svg');
+            background-position: center;
+            margin-left: 0;
+        }
+
+        &--next {
+            background: $light_grey50 no-repeat url('./img/chevron-right-black.svg');
+            background-position: center;
+            margin-right: 0;
+        }
+
+        
+        &--dots:hover,
+        &--dots {
+            background-color: transparent;
+            color: $text;
+            cursor: default;
+        }
+    }
+}
+
+@mixin for-desktop-up {
+    .dashboard__pager {
+        &_info span,
+        &_info {
+            @include flexy-font(14px);
+        }
+    
+        &_item {
+            @include flexy-font(12px);
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

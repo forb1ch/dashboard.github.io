@@ -1,0 +1,11 @@
+.dashboard {
+    background-color: $white;
+    border-radius: 30px;
+    padding: 44px 0 40px;
+}
+
+@include for-phone-tablet {
+    .dashboard {
+        padding: 20px 0;
+    }
+}

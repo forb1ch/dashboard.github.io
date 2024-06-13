@@ -1,0 +1,13 @@
+.dashboard__page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+@include for-phone-tablet {
+    .dashboard__page {
+        display: flex;
+        flex-direction: column;
+    }
+}

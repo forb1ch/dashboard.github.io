@@ -1,0 +1,149 @@
+.dashboard__grid {
+    &_header {
+        padding: 0 53px 0 38px;
+        border-bottom: 1px solid $light_grey40;
+
+        .dashboard__grid_row {
+            padding-bottom: 14px;
+        }
+
+        .dashboard__grid_item p {
+            color: $lighter_grey;
+        }
+
+        .dashboard__grid_item:last-of-type {
+            text-align: center;
+        }
+    }
+
+    &_footer,
+    &_content {
+        margin: 0 53px 0 38px;
+    }
+
+    &_content {
+        .dashboard__grid_row {
+            border-bottom: 1px solid $light_grey40;
+            padding: 20px 0;
+        }
+        
+        .dashboard__grid_item {
+            color: $text;
+        }
+
+        .dashboard__grid_item:last-of-type {
+            display: flex;
+            justify-content: center
+        }
+    }
+
+    &_item {
+        padding-right: 8px;
+    }
+
+    &_item:last-of-type {
+        padding-right: 0;
+    }
+
+    &_item p {
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 500;
+        margin: 0;
+        word-break: break-word;
+        white-space: pre-wrap;
+    }
+
+    &_item_label {
+        color: $lighter_grey;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 500;
+        display: none;
+    }
+    
+    &_row {
+        display: flex;
+        align-items: center;
+    }
+
+    &_footer {
+        margin-top: 32px;
+    }
+
+    &_item--customer {
+        width: 20%;
+    }
+
+    &_item--company {
+        width: 14%;
+    }
+    
+    &_item--phone {
+        width: 16%;
+    }
+    
+    &_item--email {
+        width: 27%;
+    }
+    
+    &_item--country {
+        width: 14%;
+    }
+
+    &_item--status {
+        width: 9%;
+    }
+}
+
+@include for-phone-tablet-max {
+    .dashboard__grid {
+        &_header {
+            display: none;
+        }
+
+        &_footer,
+        &_content {
+            margin: 0 20px;
+        }
+
+        &_footer {
+            margin-top: 20px;
+        }
+
+        &_row {
+            flex-direction: column;
+        }
+
+        &_row:first-of-type {
+            padding-top: 0;
+        }
+
+        &_content .dashboard__grid_item {
+            margin-bottom: 5px;
+        }
+
+        &_content .dashboard__grid_item:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &_content .dashboard__grid_item:last-of-type,
+        &_content .dashboard__grid_item {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        &_item_label {
+            display: block;
+        }
+    }
+}
+
+@mixin for-desktop-up {
+    .dashboard__grid {
+        &_item p {
+            @include flexy-font(14px);
+        }
+    }
+}

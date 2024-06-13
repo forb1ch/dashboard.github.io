@@ -1,0 +1,16 @@
+.dashboard__grid_footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@include for-phone-tablet-max {
+    .dashboard__grid_footer {
+        flex-direction: column;
+        align-items: center;
+
+        .dashboard__left_side {
+            margin-bottom: 10px;
+        }
+    }
+}
