@@ -1,7 +1,5 @@
 .dashboard__page {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     margin: 0;
 }
 
@@ -9,5 +7,12 @@
     .dashboard__page {
         display: flex;
         flex-direction: column;
+    }
+}
+
+@include for-desktop-up {
+    .dashboard__page {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
